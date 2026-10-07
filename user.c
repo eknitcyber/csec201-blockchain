@@ -22,7 +22,8 @@ struct User* add(struct User * head, char* Username) {
        
         generateDigest(&(newHead->hash), head);
     }
-    
+
+    newHead->next = head; //initializes linked-list pointer 
     return newHead; // Logical error: should be newHead->next = head
 }
 
@@ -74,7 +75,7 @@ void verify(struct User* curr) {
 
     printf("******** Verifying Log *********\n\n");
 
-    struct Block* prev = NULL;
+    struct User* prev = NULL; //Changed from "Block" to "User"
     if (curr != NULL) {
         prev = curr; // Logical error: should be curr->next
     }

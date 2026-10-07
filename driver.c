@@ -4,7 +4,7 @@
 
 
 int main(void) {
-	struct user * head=NULL;
+	struct User * head=NULL; // Capitalize the "U"
 	head = add(head, "rob");
 	head = add(head, "hanif");
 	head = add(head, "gahyun");
