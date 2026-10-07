@@ -37,8 +37,8 @@ int main(void) {
 	// head->next->loginTime += 1000;
 	// printf("\nChanged sumita's login timestamp.\n\n");
 
-	// head->hash.hash0 += 1;
-	// printf("\nChanged james's stored hash.\n\n");
+	head->hash.hash0 += 1;
+	printf("\nChanged james's stored hash.\n\n");
 
 	// strcpy(head->next->Username, "brokenlink");
 	// printf("\nChanged sumita after james's hash was created.\n\n");
