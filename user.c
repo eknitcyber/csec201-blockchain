@@ -77,7 +77,7 @@ void verify(struct User* curr) {
 
     struct User* prev = NULL; //Changed from "Block" to "User"
     if (curr != NULL) {
-        prev = curr; // Logical error: should be curr->next
+        prev = curr->next; // Logical error: should be curr->next
     }
 
     printf("User 1, impossible to verify\n");
@@ -90,7 +90,7 @@ void verify(struct User* curr) {
 
         if (prev != NULL) {
             struct Digest prev_digest_computed;
-            generateDigest(&prev_digest_computed, curr); // Logical error: should be prev->next
+            generateDigest(&prev_digest_computed, prev); // Logical error: should be prev->next
 
             if (digest_equal(prev_digest_computed, curr->hash)) { // Logical error: should be prev->hash
                 printf("User %d passed\n", height);
