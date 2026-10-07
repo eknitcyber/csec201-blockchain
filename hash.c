@@ -11,13 +11,13 @@ unsigned char* SSHA(const unsigned char* msg, size_t length) {
         for (int round = 0; round < 8; round++) {
             unsigned char g = (B & C) | (C & D);
             unsigned char old_A = A;
-            A = A ^ E ^ msg[i];
-            B = B + round * 2;
-            E = (g + B + C);
-            D = A ^ B;
-            C = (A + E);
-            A = E;
+            unsigned char old_B = B;
+            unsigned char old_E = E;
+            A = old_E;
             B = old_A;
+            C = (old_A >> 2) + old_E;
+            D = (old_A >> 2) ^ (old_B >> 1);
+            E = (old_B >> 1) + g + msg[i];
         }
     }
 
@@ -26,7 +26,7 @@ unsigned char* SSHA(const unsigned char* msg, size_t length) {
     digest[1] = B;
     digest[2] = C;
     digest[3] = D;
-    digest[4] = D;
+    digest[4] = E;
     return digest;
 }
 
