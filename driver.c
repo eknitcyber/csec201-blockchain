@@ -34,8 +34,8 @@ int main(void) {
 	// strcpy(head->next->Username, "changed");
 	// printf("\nChanged sumita's username to: %s\n\n", head->next->Username);
 
-	head->next->loginTime += 1000;
-	printf("\nChanged sumita's login timestamp.\n\n");
+	// head->next->loginTime += 1000;
+	// printf("\nChanged sumita's login timestamp.\n\n");
 
 	// head->hash.hash0 += 1;
 	// printf("\nChanged james's stored hash.\n\n");
